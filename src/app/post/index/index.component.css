@@ -1,0 +1,91 @@
+.title{
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #0078d4;
+  text-align: center;
+}
+.container{
+    position: relative;
+}
+.search-input{
+    width: 30%;
+    position: absolute;
+    top: 35px;
+    right: 14px;
+}
+.actions{
+  margin-bottom: 5px;
+}
+.reset-btn, .delete-btn{
+    margin-left: 5px;
+}
+
+.pagination-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.pagination-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .pagination-button:hover {
+    background-color: #2980b9;
+  }
+
+  .page-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  /* Add a subtle box-shadow to the buttons */
+.pagination-button {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Add a border when disabled */
+  .pagination-button:disabled {
+    border: 1px solid #ccc;
+  }
+
+  /* styles.css */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+
+  }
+  
+  .table th {
+    background-color: #0078d4;
+    color: white;
+    padding: 5px;
+  }
+
+  
+  .pagination-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}

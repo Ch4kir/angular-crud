@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="actions">
+    <h1 class="title">Angular 16 CRUD  - Ch4kir.com</h1>
+    <a href="#" routerLink="/post/create/" class="btn btn-success">Create New Post</a>  
+    <input type="text" [(ngModel)]="searchValue" placeholder="Search for posts" class="form-control search-input">
+    <button (click)="resetPosts()" class="btn btn-primary reset-btn">Reload data</button>
+    <button (click)="deleteAll()" class="btn btn-danger delete-btn">Delete all posts</button>
+  </div>
+    <div class="table-container">
+    <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let post of getPostsForPage()">
+                <ng-container *ngIf="post.title.includes(searchValue) || post.body.includes(searchValue)">
+     
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
+                  <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
+                  <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+                </td>
+              </ng-container>
+              </tr>
+            
+        </tbody>
+    </table>
+  </div>
+
+    <div class="pagination-wrapper">
+    <div class="pagination-controls" *ngIf="totalPages > 1">
+      <button class="pagination-button" (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1">Previous</button>
+      <span class="page-number">{{ currentPage }} /  {{totalPages}}</span>
+      <button class="pagination-button" (click)="currentPage = currentPage + 1" [disabled]="isLastPage() || getPostsForPage().length < 1">Next</button>
+    </div>
+  </div>
+ </div>
